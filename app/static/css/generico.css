@@ -122,6 +122,7 @@ ul{
 }
 
 .content {
+    height: 90vh;
     margin: 2em 0;
 }
 
@@ -141,13 +142,7 @@ ul{
     background-color: var(--black);
 }
 
-h6{
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    font-size: 1.2em;
-    margin-top: 1.5em;
-    margin-bottom: .2em;
-}
+
 .grid-5{
     margin: 2em 8em;
     padding: 1em 0em;
@@ -181,7 +176,7 @@ ul{
     text-align: center;
     padding-top: 1em;
 }
-
+/* texto */
 .title {
     font-family: "Open Sans";
     font-weight: 800;
@@ -189,6 +184,14 @@ ul{
     color: var(--title);
     margin: 0;
     text-align: center;
+}
+
+h6{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 1.2em;
+    margin-top: 1.5em;
+    margin-bottom: .2em;
 }
 
 .title-description {
@@ -202,7 +205,7 @@ p {
     color: var(--text);
     margin: 0;
 }
-
+/* texto */
 
 /* card */
 .card{
@@ -211,7 +214,7 @@ p {
     margin: auto;
     background: var(--button);
     color: var(--white)!important;
-    width: 15vw;
+    width: 22vw;
     
 }
 .card-p{
@@ -229,3 +232,14 @@ p {
     width: 100%;
 }
 /* card */
+
+/* Mascota */
+.mascotas{
+    display: flex;
+    position: relative;
+    width: 100%;
+    top: 5em;
+    z-index: -1;
+}
+
+/* Mascota */
