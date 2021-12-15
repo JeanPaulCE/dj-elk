@@ -1,0 +1,49 @@
+html{
+    background-color: var(--white);
+}
+.p-titulo{
+    margin-top: 1em!important;
+    font-family: "Open Sans";
+    font-weight: 800;
+    font-size: 2em;
+    color: var(--title);
+    margin: 0;
+    padding-left: 4em;
+}
+.p-img{
+    display: block;
+    margin: auto;
+    align-content: center;
+}
+.bk{
+    background: #0f0f0f;
+}
+.portafolio{
+    display: block;
+    margin: auto;
+}
+.gr{
+    background: #454545;
+}
+.p-p{
+    padding-top: 1em;
+    padding-left: 12em;
+    padding-bottom: 6em;
+}
+.paper-end{
+    position: relative;
+    top: -4em;
+}
+.bg{
+    background: var(--background);
+}
+.content{
+    margin: 0 0 40em 0;
+}
+.space{
+    margin-top: 2em;
+}
+.b{
+    color: var(--white);
+}
+
