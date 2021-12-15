@@ -3,11 +3,35 @@
 
 
 {% block css %}
-
+    <link rel="stylesheet" href="{% static 'css/portafolio.css' %}">
 {% endblock %}
 
 {% block content%}
-<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis rem animi id quaerat voluptas tempore ex amet assumenda! Doloremque, odio eveniet magni distinctio quis odit voluptatibus nesciunt cupiditate mollitia pariatur!</p>
+
+<h1 class="title space">Portafolio</h1>
+<p class="center">Te invitamos a darle un vistazo a nuestras cacerías.</p>
+
+<div class="grid-r-3">
+    <div class="portafolio">
+        <img class="p-img" src="{% static 'images/portafolio1.png' %}" alt="">
+        <h2 class="p-titulo">Bar Secretos</h2>
+        <p class="p-p">Secretos es un Bar Restaurante Lounge ubicado en San Ramon Centro, en la provincia de Alajuela.La campaña estará planeada para el período Abril-Junio, tomando el mes de Marzo para preparación de la misma.</p>
+    </div>
+    <div class="portafolio bk">
+        <img class="p-img" src="{% static 'images/portafolio4.jpg' %}" alt="">
+        <h2 class="p-titulo">Diseño editorial</h2>
+        <p class="p-p b">Secretos es un Bar Restaurante Lounge ubicado en San Ramon Centro, en la provincia de Alajuela.La campaña estará planeada para el período Abril-Junio, tomando el mes de Marzo para preparación de la misma.</p>
+    </div>
+    <div class="portafolio gr">
+        <img class="p-img w100" src="{% static 'images/portafolio2.jpg' %}" alt="">
+        <h2 class="p-titulo">Logo y publicidad</h2>
+        <p class="p-p b">Secretos es un Bar Restaurante Lounge ubicado en San Ramon Centro, en la provincia de Alajuela.La campaña estará planeada para el período Abril-Junio, tomando el mes de Marzo para preparación de la misma.</p>
+        <img class="p-img w100" src="{% static 'images/portafolio3.jpg' %}" alt="">
+        
+    </div>
+</div>
+<img class="paper-img paper-end" src="{% static 'images/paper-top.png' %}" alt="paper">
+
 {% endblock %}
 
 {% block js %}
