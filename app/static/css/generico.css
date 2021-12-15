@@ -122,7 +122,7 @@ ul{
 }
 
 .content {
-    margin: 2em 0;
+    margin: 0 0 36em 0;
 }
 
 .footer{
@@ -135,19 +135,16 @@ ul{
     font-size: 1em;
     color: var(--white);
     max-height: 30vh;
+    position: relative;
+    
+    
 }
 
 .bg-footer {
     background-color: var(--black);
 }
 
-h6{
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    font-size: 1.2em;
-    margin-top: 1.5em;
-    margin-bottom: .2em;
-}
+
 .grid-5{
     margin: 2em 8em;
     padding: 1em 0em;
@@ -181,51 +178,75 @@ ul{
     text-align: center;
     padding-top: 1em;
 }
+/* texto */
+    .title {
+        font-family: "Open Sans";
+        font-weight: 800;
+        font-size: 2em;
+        color: var(--title);
+        margin: 0;
+        text-align: center;
+    }
 
-.title {
-    font-family: "Open Sans";
-    font-weight: 800;
-    font-size: 2em;
-    color: var(--title);
-    margin: 0;
-    text-align: center;
-}
+    h6{
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-size: 1.2em;
+        margin-top: 1.5em;
+        margin-bottom: .2em;
+    }
 
-.title-description {
-    margin-top: .5em;
-}
+    .title-description {
+        margin-top: .5em;
+    }
 
-p {
-    font-family: "Open Sans";
-    font-weight: 400;
-    font-size: 1em;
-    color: var(--text);
-    margin: 0;
-}
+    .center{
+        text-align: center;
+        margin-bottom: 3em;
+    }
 
+
+    p {
+        font-family: "Open Sans";
+        font-weight: 400;
+        font-size: 1em;
+        color: var(--text);
+        margin: 0;
+    }
+/* texto */
 
 /* card */
-.card{
-    display: grid;
-    grid-template-rows:repeat(6,1fr) ;
-    margin: auto;
-    background: var(--button);
-    color: var(--white)!important;
-    width: 15vw;
-    
-}
-.card-p{
-    color: var(--white)!important;
-    padding-left: 2.5em;
-    
-}
-.card-title{
-    font-size: 1.5em;
-    margin: 1em 0 0 1em;
-}
-.card-img{
-    grid-row-start: 1;
-    grid-row-end: 4;
-    width: 100%;
-}
+    .card{
+        display: grid;
+        grid-template-rows:repeat(6,1fr) ;
+        margin: auto;
+        background: var(--button);
+        color: var(--white)!important;
+        width: 22vw;
+        
+    }
+    .card-p{
+        color: var(--white)!important;
+        padding-left: 2.5em;
+        
+    }
+    .card-title{
+        font-size: 1.5em;
+        margin: 1em 0 0 1em;
+    }
+    .card-img{
+        grid-row-start: 1;
+        grid-row-end: 4;
+        width: 100%;
+    }
 /* card */
+
+/* Mascota */
+    .mascotas{
+        display: flex;
+        position: absolute;
+        width: 100%;
+        top: -42em;
+        z-index: -1;
+    }
+/* Mascota */
