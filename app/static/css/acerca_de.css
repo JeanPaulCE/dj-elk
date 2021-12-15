@@ -13,13 +13,7 @@ header>.paper-img{
 .content{
     margin-top: 0;
 }
-.grid-c3{
+.grid-c2{
     display: grid;
     grid-template-columns:repeat(2,1fr) ;
-}
-.card{
-    display: grid;
-    grid-template-rows:repeat(3,1fr) ;
-    
-    margin: auto;
 }
