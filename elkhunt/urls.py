@@ -18,6 +18,6 @@ from django.urls import path
 from app.urls import urlpatterns as appurl
 
 urlpatterns = appurl
-"""[
-                  path('admin/', admin.site.urls),
-              ] + appurl"""
+[
+    path('admin/', admin.site.urls),
+] + appurl

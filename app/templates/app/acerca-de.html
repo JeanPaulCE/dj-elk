@@ -3,33 +3,35 @@
 
 
 {% block css %}
-    <link rel="stylesheet" href="{% static 'css/acerca_de.css' %}">
+<link rel="stylesheet" href="{% static 'css/acerca_de.css' %}">
 {% endblock %}
 
 {% block content%}
-    <div class="bg-w">
-        <h1 class="title">Conocé Nuestra Historia</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex aperiam distinctio nisi ab deleniti repudiandae ad sequi nemo beatae dolores officia, ut consequuntur? Perferendis hic assumenda aliquam doloremque natus explicabo.</p>
-    </div>
-    
-    <img class="paper-img" src="{% static 'images/paper-bottom.png' %}" alt="paper">
-    <h2 class="title w100">Personal</h2>  
-    <div class="grid-c2">
+<div class="bg-w">
+    <h1 class="title">Conocé Nuestra Historia</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex aperiam distinctio nisi ab deleniti repudiandae ad
+        sequi nemo beatae dolores officia, ut consequuntur? Perferendis hic assumenda aliquam doloremque natus
+        explicabo.</p>
+</div>
 
-        <div class="card">
-            <img class="card-img" src="{% static 'images/modelo.jpg' %}" alt="modelo">
-            <h3 class="card-title">Jean Paul</h3>
-            <p class="card-p">Programador web, editor de video, camarografo, diseñador</p>
-        </div>
+<img class="paper-img" src="{% static 'images/paper-bottom.png' %}" alt="paper">
+<h2 class="title w100">Personal</h2>
+<div class="grid-c2">
 
-        <div class="card">
-            <img class="card-img" src="{% static 'images/modelo.jpg' %}" alt="modelo">
-            <h3 class="card-title">Dana Moya</h3>
-            <p class="card-p">Publicista, dibujante, fotografa, diseñadora</p>
-        </div>
-        
+    <div class="card">
+        <img class="card-img" src="{% static 'images/modelo.jpg' %}" alt="modelo">
+        <h3 class="card-title">Jean Paul</h3>
+        <p class="card-p">Programador web, editor de video, camarografo, diseñador</p>
     </div>
-    
+
+    <div class="card">
+        <img class="card-img" src="{% static 'images/modelo.jpg' %}" alt="modelo">
+        <h3 class="card-title">Dana Moya</h3>
+        <p class="card-p">Publicista, dibujante, fotografa, diseñadora</p>
+    </div>
+
+</div>
+
 {% endblock %}
 
 {% block js %}

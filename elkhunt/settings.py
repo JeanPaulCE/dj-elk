@@ -73,7 +73,7 @@ WSGI_APPLICATION = 'elkhunt.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', 
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'u260266251_elkhunt_django',
         'USER': 'u260266251_elkhunt_django',
         'PASSWORD': '@S|*k;VjcmX4',
@@ -105,7 +105,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'es-cr'
 
-TIME_ZONE = 'American/Costa_Rica'
+TIME_ZONE = 'America/Costa_Rica'
 
 USE_I18N = True
 
@@ -122,3 +122,6 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'index'

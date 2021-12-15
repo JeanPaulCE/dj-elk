@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 # Create your models here.
 class Perfil(models.Model):
     usuario = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -8,6 +9,7 @@ class Perfil(models.Model):
     ubicacion = models.CharField(max_length=150)
     mercado = models.CharField(max_length=50)
     telefono = models.CharField(max_length=12)
+
 
 class Cotizaciones(models.Model):
     solicitante = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -20,5 +22,5 @@ class Tareas(models.Model):
     descripcion = models.TextField()
     fecha_creacion = models.DateTimeField(auto_now_add=True)
     fecha_finalizacion = models.DateTimeField()
-    administrador_creador = models.ForeignKey(User, on_delete=models.CASCADE,related_name='creador')
-    administrador_encargado = models.ForeignKey(User, on_delete=models.CASCADE,related_name='encargado')
+    administrador_creador = models.ForeignKey(User, on_delete=models.CASCADE, related_name='creador')
+    administrador_encargado = models.ForeignKey(User, on_delete=models.CASCADE, related_name='encargado')

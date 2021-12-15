@@ -5,7 +5,6 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('auth', '0012_alter_user_first_name_max_length'),
         ('app', '0003_alter_usuarios_email'),
@@ -36,12 +35,14 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='tareas',
             name='administrador_creador',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='creador', to='auth.user'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='creador',
+                                    to='auth.user'),
         ),
         migrations.AlterField(
             model_name='tareas',
             name='administrador_encargado',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='encargado', to='auth.user'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='encargado',
+                                    to='auth.user'),
         ),
         migrations.AlterField(
             model_name='tareas',

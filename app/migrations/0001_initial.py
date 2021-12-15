@@ -5,7 +5,6 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -42,8 +41,12 @@ class Migration(migrations.Migration):
                 ('descripcion', models.TextField()),
                 ('fecha_creacion', models.DateTimeField()),
                 ('fecha_finalisacion', models.DateTimeField()),
-                ('administrador_creador', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='creador', to='app.administradores')),
-                ('administrador_encargado', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='encargado', to='app.administradores')),
+                ('administrador_creador',
+                 models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='creador',
+                                   to='app.administradores')),
+                ('administrador_encargado',
+                 models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='encargado',
+                                   to='app.administradores')),
             ],
         ),
         migrations.CreateModel(
