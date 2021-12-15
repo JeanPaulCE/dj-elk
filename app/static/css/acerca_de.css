@@ -1,0 +1,25 @@
+header>.paper-img{
+    display:none ;
+}
+.bg-w{
+    background: #fff;
+}
+.bg-w>.title{
+    padding-top: 2em;
+}
+.bg-w>p{
+    margin: 0 25vw;
+}
+.content{
+    margin-top: 0;
+}
+.grid-c3{
+    display: grid;
+    grid-template-columns:repeat(2,1fr) ;
+}
+.card{
+    display: grid;
+    grid-template-rows:repeat(3,1fr) ;
+    
+    margin: auto;
+}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/acerca_de.css' %}">
+{% endblock %}
+
+{% block content%}
+    <div class="bg-w">
+        <h1 class="title">Conocé Nuestra Historia</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex aperiam distinctio nisi ab deleniti repudiandae ad sequi nemo beatae dolores officia, ut consequuntur? Perferendis hic assumenda aliquam doloremque natus explicabo.</p>
+    </div>
+    <img class="paper-img" src="{% static 'images/paper-bottom.png' %}" alt="paper">
+    <h2 class="title w100">Prsonal</h2>  
+    <div class="grid-c3">
+
+        <div class="card">
+            <img src="" alt="">
+            <h3 class="title2 B">Jean Paul</h3>
+            <p class="B">Programador web, editor de video, camarografo, diseñador</p>
+        </div>
+
+        <div class="card">
+            <img src="" alt="">
+            <h3 class="title2 B">Dana Moya</h3>
+            <p class="B">Publicista, dibujante, fotografa, diseñadora</p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}
+
+<!--docker run -d --rm --name mail -p 8025:8025 -p  1025:1025 -d mailhog/mailhog-->

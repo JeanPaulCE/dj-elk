@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="container-slider">
+    <div id="slider" class="slider">
+        <div class="container-slider-image">
+            <img src="{% static 'images/test1.jpg' %}" alt="slider-image1" class="slider-image">
+        </div>
+        <div class="container-slider-image">
+            <img src="{% static 'images/test2.jpg' %}" alt="slider-image2" class="slider-image">
+        </div>
+        <div class="container-slider-image">
+            <img src="{% static 'images/test3.jpg' %}" alt="slider-image3" class="slider-image">
+        </div>
+    </div>
+    <div id="button-left" class="container-button-left">
+        <img src="{% static 'images/button-left.png' %}" alt="slider-button-left">
+    </div>
+    <div id="button-right" class="container-button-right">
+        <img src="{% static 'images/button-right.png' %}" alt="slider-button-right">
+    </div>
+    <div class="container-slider-point">
+        <i class="fas fa-circle slider-point"></i>
+        <i class="fas fa-circle slider-point"></i>
+        <i class="fas fa-circle slider-point"></i>
+    </div>
+</section>
+
+<section>
+    <img class="paper-img" src="{% static 'images/paper-top.png' %}" alt="paper">
+    <div class="container-title">
+        <h1 class="title">CONOCÉ NUESTRAS<br>ESPECIALIDADES </h1>
+        <p class="title-description">¿Listos para unirse al grupo de caza? Nos encanta crear<br>proyectos que vuelen la cabeza, y vos, sos nuestro<br>compañero ideal </p>
+    </div>
+    <img class="paper-img" src="{% static 'images/paper-bottom.png' %}" alt="paper">
+</section>
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'js/slider.js' %}"></script>
+{% endblock %}
