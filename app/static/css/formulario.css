@@ -1,5 +1,5 @@
 .form-container {
-    width: 60%;
+    width: 40%;
     margin: auto;
 }
 
@@ -26,6 +26,6 @@
     padding: .5em 1em;
 }
 
-.form-input {
-    
+.form-input:focus {
+    border: 1px solid var(--title);
 }
