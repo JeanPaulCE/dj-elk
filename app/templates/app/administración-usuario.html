@@ -3,12 +3,60 @@
 
 
 {% block css %}
-
+<link rel="stylesheet" href="{% static 'css/usuario.css' %}">
 {% endblock %}
 
+{% block extra_title %}
+<div class="container-title">
+    <br>
+    <h1 class="title">Gestion del usuario</h1>
+</div>
+{% endblock %}
 
 {% block content%}
+<section class="grid-r">
+    <div class="block">
+        <img class="w100 img-b" src="{% static 'images/business-people-having-meeting.jpg' %}" alt="empresa">
+        <div>
+            <h1 class="titulo-b">{{usuario}}</h1><br>
+            <p class="b">Nombre completo: {{fullname}}</p><br>
+            <p class="b">Email: {{email}}</p>      <br>  
+            <p class="b">Ultimo inico: {{inicio}}</p><br>
+        </div>
+        <div> 
+            <p class="b sp">Empresa:   {{perfil.empresa}}</p><br>
+            <p class="b">Ubicacion: {{perfil.ubicacion}}</p>      <br>  
+            <p class="b">Mercado:   {{perfil.mercado}}</p><br>
+            <p class="b">Telefono:  {{perfil.telefono}}</p><br>
+        </div>
+        <div class="grid-r-3">
+            <div class="r2">
+                <a class="btn" href="#">Nueva cotizacion</a>
+            </div>
+        </div>
+        
+    </div>
+    <div class="block">
+        <img class="w100 img-b" src="{% static 'images/cotizacion.jpg' %}" alt="">
+        <div>
+            <h1 class="titulo-b">{{usuario}}</h1><br>
+            <p class="b">Nombre completo: {{fullname}}</p><br>
+            
+        </div>
+        <div>
 
+        </div>
+        <div>
+            <div>
+                <a class="btn" href="#">Editar cotizacion</a>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+    
+    <!-- <p> {{cotizaciones}}</p> -->
 {% endblock %}
 
 

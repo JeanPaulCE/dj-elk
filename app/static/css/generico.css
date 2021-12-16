@@ -213,6 +213,15 @@ ul{
         color: var(--text);
         margin: 0;
     }
+    .p-titulo{
+        margin-top: 1em!important;
+        font-family: "Open Sans";
+        font-weight: 800;
+        font-size: 2em;
+        color: var(--title);
+        margin: 0;
+        padding-left: 4em;
+    }
 /* texto */
 
 /* card */

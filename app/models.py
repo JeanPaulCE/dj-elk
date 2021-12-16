@@ -12,6 +12,7 @@ class Perfil(models.Model):
 
 
 class Cotizaciones(models.Model):
+    titulo = models.CharField(max_length=20)
     solicitante = models.ForeignKey(User, on_delete=models.CASCADE)
     servicio = models.IntegerField()
     descripcion = models.TextField()
