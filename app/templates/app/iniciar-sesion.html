@@ -1,2 +1,28 @@
 {% extends 'base.html' %}
 {% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/formulario.css' %}">
+{% endblock %}
+
+{% block extra_title %}
+<div class="container-title">
+    <h1 class="title">INICAR SESIÓN</h1>
+</div>
+{% endblock %}
+
+{% block content %}
+<section class="form-container">
+    <form action="." method="post">
+        {% csrf_token %}
+        {% for field in form.visible_fields %}
+        <div class="form-grid">
+            <label class="form-label">{{ field.label }}</label>
+            {{ field }}
+            {{ field.errors }}
+        </div>
+        {% endfor %}
+        <input class="button" type="submit" value="Acceder">
+    </form>
+</section>
+{% endblock %}

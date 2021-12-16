@@ -1,12 +1,17 @@
 .form-container {
-    width: 60%;
-    margin: auto;
+    width: 40%;
+    margin: 1em auto 0;
 }
 
 .form-grid {
     display: grid;
     grid-auto-flow: row;
     margin-bottom: .5em;
+}
+
+.form-description {
+    text-align: center;
+    margin-bottom: 1em;
 }
 
 .form-label {
@@ -16,16 +21,15 @@
     font-size: 1em;
 }
 
-.form-submit {
-    background-color: var(--button);
-    color: var(--white);
-    font-family: "Open Sans";
-    font-weight: 700;
-    font-size: 1em;
-    border: none;
-    padding: .5em 1em;
+.form-container form div input {
+    padding: .2em .5em;
 }
 
-.form-input {
-    
+.form-container form div input:focus {
+    border: 1px solid var(--title);
+    outline: none;
+}
+
+.errorlist {
+    color: red;
 }

@@ -11,8 +11,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
-        rel="stylesheet">
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+            rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/generico.css' %}">
     {% block css %}
     {% endblock %}
@@ -20,90 +20,106 @@
 </head>
 
 <body>
-    <section class="container">
-        <header>
-            <div class="background-top">
-                <div class="inner-grid">
-                    <div class="top-grid">
-                        <img src="{% static 'images/logo.png' %}" alt="logo">
-                        <div class="menu-grid">
-                            <nav>
-                                <ul class="menu-items">
-                                    <li><a class="menu-link hvr-underline-from-center" href="{% url 'index' %}">INICIO</a></li>
-                                    <li><a class="menu-link hvr-underline-from-center" href="{% url 'portafolio' %}">PORTAFOLIO</a></li>
-                                    <li><a class="menu-link hvr-underline-from-center" href="{% url 'acerca-de' %}">NUESTRA HISTORIA</a></li>
-                                    <li><a class="menu-link hvr-underline-from-center" href="{% url 'registro' %}">CONTACTANOS</a></li>
-                                </ul>
-                            </nav>
-                        </div>
+<section class="container">
+    <header>
+        <div class="background-top">
+            <div class="inner-grid">
+                <div class="top-grid">
+                    <img src="{% static 'images/logo.png' %}" alt="logo">
+                    <div class="menu-grid">
+                        <nav>
+                            <ul class="menu-items">
+                                <li><a class="menu-link hvr-underline-from-center" href="{% url 'index' %}">INICIO</a>
+                                </li>
+                                <li><a class="menu-link hvr-underline-from-center" href="{% url 'portafolio' %}">PORTAFOLIO</a>
+                                </li>
+                                <li><a class="menu-link hvr-underline-from-center" href="{% url 'acerca-de' %}">NUESTRA
+                                    HISTORIA</a></li>
+                                {% if user.is_authenticated %}
+                                {% if user.is_superuser == 1 %}
+                                <li><a class="menu-link hvr-underline-from-center" href="#">ADMINISTRACIÓN</a>
+                                </li>
+                                {% else %}
+                                <li><a class="menu-link hvr-underline-from-center" href="#">ADMINISTRACIÓN</a>
+                                </li>
+                                {% endif %}
+                                <li><a class="menu-link hvr-underline-from-center" href="{% url 'cerrar-sesion' %}">CERRAR
+                                    SESIÓN</a>
+                                </li>
+                                {% else %}
+                                <li><a class="menu-link hvr-underline-from-center" href="{% url 'registro' %}">CONTACTANOS</a>
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </div>
-            {% block extra_title %}
-            {% endblock %}
-            <img class="paper-img" src="{% static 'images/paper-menu.png' %}" alt="paper">
-        </header>
+        </div>
+        {% block extra_title %}
+        {% endblock %}
+        <img class="paper-img" src="{% static 'images/paper-menu.png' %}" alt="paper">
+    </header>
 
-        <main class="content">
-            {% block content %}
-            {% endblock %}
-            
-        </main>
-       
-        <footer class="footer">
-            <img class="mascotas" src="{% static 'images/mascota.png' %}" alt="mascotas">
-            <div class="bg-footer">
-                <div class="grid-5">
-                    <div class="copy-f">
-                        <div>
-                            <h6>ELKHUNT</h6>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at dignissim nunc,
-                                id
-                                tex.
-                                Etiam nec dignissim elit, at dignissim enim. </p>
-                            <div class="ico-f">
-                                <i class="fab fa-instagram"></i>
-                                <i class="fab fa-facebook-f"></i>
-                                <i class="fab fa-whatsapp"></i>
-                            </div>
+    <main class="content">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="footer">
+        <img class="mascotas" src="{% static 'images/mascota.png' %}" alt="mascotas">
+        <div class="bg-footer">
+            <div class="grid-5">
+                <div class="copy-f">
+                    <div>
+                        <h6>ELKHUNT</h6>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at dignissim nunc,
+                            id
+                            tex.
+                            Etiam nec dignissim elit, at dignissim enim. </p>
+                        <div class="ico-f">
+                            <i class="fab fa-instagram"></i>
+                            <i class="fab fa-facebook-f"></i>
+                            <i class="fab fa-whatsapp"></i>
                         </div>
+                    </div>
 
-                    </div>
-                    <div class="about-f">
-                        <h6>Acerca de</h6>
-                        <ul>
-                            <li>Historia</li>
-                            <li>Nuestro Equipo</li>
-                            <li>Terminos y condiciones </li>
-                            <li>Politicas de privacias</li>
-                        </ul>
-                    </div>
-                    <div class="services-f">
-                        <h6>Servicios</h6>
-                        <ul>
-                            <li>Diseño web</li>
-                            <li>Publicidad en redes</li>
-                            <li>Marketing</li>
-                            <li>Comerciales</li>
-                        </ul>
-                    </div>
-                    <div class="other-f">
-                        <h6>Otros</h6>
-                        <ul>
-                            <li>Contactanos</li>
-                            <li>Ayuda</li>
-                            <li>Privacidad</li>
+                </div>
+                <div class="about-f">
+                    <h6>Acerca de</h6>
+                    <ul>
+                        <li>Historia</li>
+                        <li>Nuestro Equipo</li>
+                        <li>Terminos y condiciones</li>
+                        <li>Politicas de privacias</li>
+                    </ul>
+                </div>
+                <div class="services-f">
+                    <h6>Servicios</h6>
+                    <ul>
+                        <li>Diseño web</li>
+                        <li>Publicidad en redes</li>
+                        <li>Marketing</li>
+                        <li>Comerciales</li>
+                    </ul>
+                </div>
+                <div class="other-f">
+                    <h6>Otros</h6>
+                    <ul>
+                        <li>Contactanos</li>
+                        <li>Ayuda</li>
+                        <li>Privacidad</li>
 
-                        </ul>
-                    </div>
+                    </ul>
                 </div>
             </div>
-        </footer>
+        </div>
+    </footer>
 
-    </section>
+</section>
 
-    {% block js %}
-    {% endblock %}
+{% block js %}
+{% endblock %}
 </body>
 
 </html>

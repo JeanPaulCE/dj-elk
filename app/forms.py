@@ -6,6 +6,7 @@ from django.contrib.auth.forms import UserCreationForm
 
 from .models import Perfil
 
+
 class UsuariosForm(UserCreationForm):
     empresa = forms.CharField(max_length=75)
     ubicacion = forms.CharField(max_length=150)
@@ -14,8 +15,11 @@ class UsuariosForm(UserCreationForm):
 
     def save(self, commit=True):
         instance = super().save(commit=commit)
-        Perfil.objects.create(usuario=instance, empresa=self.cleaned_data["empresa"], ubicacion=self.cleaned_data["ubicacion"], mercado=self.cleaned_data["mercado"], telefono=self.cleaned_data["telefono"])
-    
+        Perfil.objects.create(usuario=instance, empresa=self.cleaned_data["empresa"],
+                              ubicacion=self.cleaned_data["ubicacion"], mercado=self.cleaned_data["mercado"],
+                              telefono=self.cleaned_data["telefono"])
+        return instance
+
     class Meta:
         model = User
         fields = ['username', 'first_name', 'last_name', 'email']
@@ -25,7 +29,7 @@ class UsuariosForm(UserCreationForm):
             'password': PasswordInput(),
             'telefono': NumberInput(
                 attrs={
-                    'maxlength':'4',
+                    'maxlength': '4',
                 },
             ),
         }
