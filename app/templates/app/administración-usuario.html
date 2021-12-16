@@ -24,10 +24,10 @@
             <p class="b">Ultimo inico: {{inicio}}</p><br>
         </div>
         <div> 
-            <p class="b sp">Empresa:   {{perfil.empresa}}</p><br>
-            <p class="b">Ubicacion: {{perfil.ubicacion}}</p>      <br>  
-            <p class="b">Mercado:   {{perfil.mercado}}</p><br>
-            <p class="b">Telefono:  {{perfil.telefono}}</p><br>
+            <p class="bb sp">Empresa:   {{perfil.empresa}}</p><br>
+            <p class="bb">Ubicacion: {{perfil.ubicacion}}</p>      <br>  
+            <p class="bb">Mercado:   {{perfil.mercado}}</p><br>
+            <p class="bb">Telefono:  {{perfil.telefono}}</p><br>
         </div>
         <div class="grid-r-3">
             <div class="r2">
@@ -36,22 +36,26 @@
         </div>
         
     </div>
-    <div class="block">
-        <img class="w100 img-b" src="{% static 'images/cotizacion.jpg' %}" alt="">
-        <div>
-            <h1 class="titulo-b">{{usuario}}</h1><br>
-            <p class="b">Nombre completo: {{fullname}}</p><br>
-            
-        </div>
-        <div>
-
-        </div>
-        <div>
-            <div>
-                <a class="btn" href="#">Editar cotizacion</a>
+    
+    {% if cotizaciones %}
+        {%for object in cotizaciones%}
+            <div class="block">
+                <img class="w100 img-b" src="{% static 'images/cotizacion.jpg' %}" alt="">
+                <div>
+                    <h1 class="titulo-b">{{object.titulo}}</h1><br>
+                    <p class="b">Servicio:{{object.servicio}}</p><br> 
+                </div>
+                <div>
+                    <p class="bb sp">Descripcion:   {{object.descripcion}}</p>
+                </div>
+                <div class="grid-r-3">
+                    <div class="r2">
+                        <a class="btn" href="#">Editar cotizacion</a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
+        {% endfor %}
+    {% endif%}
 
 
 </section>

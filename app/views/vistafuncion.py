@@ -23,7 +23,7 @@ def usuario(request):
     except:
         perfil = None
     try:
-        cotizaciones = Cotizaciones.objects.get(solicitante_id=auth_user.id)
+        cotizaciones = list(Cotizaciones.objects.filter(solicitante_id=auth_user.id))
     except:
         cotizaciones = None
 
