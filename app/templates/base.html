@@ -37,10 +37,10 @@
                                     HISTORIA</a></li>
                                 {% if user.is_authenticated %}
                                 {% if user.is_superuser == 1 %}
-                                <li><a class="menu-link hvr-underline-from-center" href="#">ADMINISTRACIÓN</a>
+                                <li><a class="menu-link hvr-underline-from-center" href="{% url 'administracion' %}">ADMINISTRACIÓN</a>
                                 </li>
                                 {% else %}
-                                <li><a class="menu-link hvr-underline-from-center" href="#">ADMINISTRACIÓN</a>
+                                <li><a class="menu-link hvr-underline-from-center" href="{% url 'usuario' %}">ADMINISTRACIÓN</a>
                                 </li>
                                 {% endif %}
                                 <li><a class="menu-link hvr-underline-from-center" href="{% url 'cerrar-sesion' %}">CERRAR
