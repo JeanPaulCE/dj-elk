@@ -41,11 +41,9 @@
         {%for object in cotizaciones%}
             <div class="block">
                 <img class="w100 img-b" src="{% static 'images/cotizacion.jpg' %}" alt="">
-                <div>
+                <div class="end4">
                     <h1 class="titulo-b">{{object.titulo}}</h1><br>
-                    <p class="b">Servicio:{{object.servicio}}</p><br> 
-                </div>
-                <div>
+                    <p class="b">Servicio:{{object.servicio}}</p><br>
                     <p class="bb sp">Descripcion:   {{object.descripcion}}</p>
                 </div>
                 <div class="grid-r-3">

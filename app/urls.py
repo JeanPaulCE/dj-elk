@@ -13,4 +13,6 @@ urlpatterns = [
     path('registro/', RegistroCreateView.as_view(), name="registro"),
     path('accounts/login/', LoginView.as_view(template_name='app/iniciar-sesion.html'), name='iniciar-sesion'),
     path('cerrar-sesion/', LogoutView.as_view(template_name='app/cerrar-sesion.html'), name='cerrar-sesion'),
+    path('administracion/', administracion, name='administracion'),
+    path('cotizacion/nueva',RegistroCotizacion.as_view(), name='nueva-cotizacion'),
 ]

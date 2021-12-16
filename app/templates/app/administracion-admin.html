@@ -3,12 +3,61 @@
 
 
 {% block css %}
-
+<link rel="stylesheet" href="{% static 'css/usuario.css' %}">
 {% endblock %}
 
+{% block extra_title %}
+<div class="container-title">
+    <br>
+    <h1 class="title">Gestion del usuario</h1>
+</div>
+{% endblock %}
 
 {% block content%}
+<section class="grid-r">
+    <div class="block">
+        <img class="w100 img-b" src="{% static 'images/business-people-having-meeting.jpg' %}" alt="empresa">
+        <div>
+            <h1 class="titulo-b">{{usuario}}</h1><br>
+            <p class="b">Nombre completo: {{fullname}}</p><br>
+            <p class="b">Email: {{email}}</p>      <br>
+            <p class="b">Ultimo inico: {{inicio}}</p><br>
+        </div>
+        <div>
+            <p class="bb sp">Empresa:   {{perfil.empresa}}</p><br>
+            <p class="bb">Ubicacion: {{perfil.ubicacion}}</p>      <br>
+            <p class="bb">Mercado:   {{perfil.mercado}}</p><br>
+            <p class="bb">Telefono:  {{perfil.telefono}}</p><br>
+        </div>
 
+
+    </div>
+
+    {% if cotizaciones %}
+        {%for object in cotizaciones%}
+            <div class="block">
+                <img class="w100 img-b" src="{% static 'images/cotizacion.jpg' %}" alt="">
+                <div>
+                    <h1 class="titulo-b">{{object.titulo}}</h1><br>
+                    <p class="b">Servicio:{{object.servicio}}</p><br>
+                </div>
+                <div>
+                    <p class="bb sp">Descripcion:   {{object.descripcion}}</p>
+                </div>
+                <div class="grid-r-3">
+                    <div class="r2">
+                         <a class="btn" href="#">Editar cotizacion</a>
+                        <a class="btn" href="#">Editar cotizacion</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif%}
+
+
+</section>
+
+    <!-- <p> {{cotizaciones}}</p> -->
 {% endblock %}
 
 

@@ -4,7 +4,7 @@ from django.forms.widgets import NumberInput, PasswordInput
 from .fields import EEmailInput
 from django.contrib.auth.forms import UserCreationForm
 
-from .models import Perfil
+from .models import Perfil, Cotizaciones
 
 
 class UsuariosForm(UserCreationForm):
@@ -33,3 +33,8 @@ class UsuariosForm(UserCreationForm):
                 },
             ),
         }
+
+class CotizacionesFormulario(forms.ModelForm):
+    class Meta:
+        model: Cotizaciones
+        fields: '__all__'
