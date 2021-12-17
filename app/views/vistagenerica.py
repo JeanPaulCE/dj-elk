@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import user_passes_test
 from django.contrib.auth.models import User
 from django.urls import reverse_lazy
 from django.views.generic import CreateView #, UpdateView, DeletView
@@ -10,6 +11,7 @@ class RegistroCreateView(CreateView):
     form_class = UsuariosForm
     template_name = "app/registro.html"
     success_url = reverse_lazy('iniciar-sesion')
+
 
 class RegistroCotizacion(CreateView):
     model = Cotizaciones
