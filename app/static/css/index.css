@@ -61,11 +61,10 @@
 /* grids */
 
 .grid-3{
-    
     display: grid;
-    margin: 0 2vw;
-    grid-template-columns: repeat(3,1fr);
-    margin-top: 5em;
+    width: 75%;
+    grid-template-columns: repeat(3, 1fr);
+    margin: auto;
 }
 
 /* grids */

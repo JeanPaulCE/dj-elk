@@ -231,8 +231,8 @@ ul{
         margin: auto;
         background: var(--button);
         color: var(--white)!important;
-        width: 22vw;
-        
+        width: 18vw;
+        height: 60vh;
     }
     .card-p{
         color: var(--white)!important;
