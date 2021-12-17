@@ -46,8 +46,10 @@
                 </div>
                 <div class="grid-r-3">
                     <div class="r2">
-                         <a class="btn" href="#">Aceptar</a>
-                         <a class="btn" href="#">rechazar</a>
+                        {%if object.status == 0 %}
+                             <a class="btn" href="{% url 'aceptar-cotizacion' object.pk  %}">Aceptar</a>
+                            <a class="btn" href="{% url 'rechazar-cotizacion' object.pk  %}">rechazar</a>
+                        {% endif%}
                     </div>
                 </div>
             </div>

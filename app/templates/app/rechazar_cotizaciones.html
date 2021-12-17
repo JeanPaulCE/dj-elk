@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+
+{% endblock %}
+
+{% block content %}
+<section class="form-container">
+    <form method="post">{% csrf_token %}
+        <h1 class="titulo-b">{{object.titulo}}</h1>
+        <p class="title-description">{{object.descripcion}}</p>
+        <input type="submit" value="Rechazar">
+     </form>
+</section>
+{% endblock %}

@@ -15,6 +15,8 @@ class Perfil(models.Model):
     ubicacion = models.CharField(max_length=150)
     mercado = models.CharField(max_length=50)
     telefono = models.CharField(max_length=12)
+    def __str__(self):
+        return self.usuario
 
 class Cotizaciones(models.Model):
     titulo = models.CharField(max_length=20)
@@ -22,7 +24,8 @@ class Cotizaciones(models.Model):
     servicio = models.ForeignKey(Servicios, on_delete=models.CASCADE)
     descripcion = models.TextField()
     status = models.IntegerField()
-
+    def __str__(self):
+        return self.titulo
     class Meta:
         permissions=[
             ('administracion','administracion de cotizaciones')
@@ -35,4 +38,6 @@ class Tareas(models.Model):
     fecha_finalizacion = models.DateTimeField()
     administrador_creador = models.ForeignKey(User, on_delete=models.CASCADE, related_name='creador')
     administrador_encargado = models.ForeignKey(User, on_delete=models.CASCADE, related_name='encargado')
+    def __str__(self):
+        return self.titulo
 

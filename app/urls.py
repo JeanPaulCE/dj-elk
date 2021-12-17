@@ -15,4 +15,7 @@ urlpatterns = [
     path('cerrar-sesion/', LogoutView.as_view(template_name='app/cerrar-sesion.html'), name='cerrar-sesion'),
     path('administracion/', administracion, name='administracion'),
     path('cotizacion/nueva/',RegistroCotizacion.as_view(), name='nueva-cotizacion'),
+    path('cotizacion/editar/<int:pk>',login_required(EditarCotizacion.as_view()), name='editar-cotizacion'),
+    path('cotizacion/aceptar/<int:pk>',AceptarCotizacion.as_view(), name='aceptar-cotizacion'),
+    path('cotizacion/rechazar/<int:pk>',RechazarCotizacion.as_view(), name='rechazar-cotizacion'),
 ]

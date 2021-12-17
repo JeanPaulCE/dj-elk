@@ -49,7 +49,7 @@ def administracion(request):
         perfil = None
 
     try:
-        cotizaciones = list(Cotizaciones.objects.filter(status=0))
+        cotizaciones = list(Cotizaciones.objects.all().exclude(status=2))
     except:
         cotizaciones = None
 
@@ -62,3 +62,4 @@ def administracion(request):
         "cotizaciones":cotizaciones
     }
     return render(request, 'app/administracion-admin.html', context=context)
+

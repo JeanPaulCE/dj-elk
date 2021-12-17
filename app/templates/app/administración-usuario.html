@@ -48,9 +48,21 @@
                 </div>
                 <div class="grid-r-3">
                     <div class="r2">
-                        <a class="btn" href="#">Editar cotizacion</a>
+                        {%if object.status == 0 %}
+                            <a class="btn" href="{% url 'editar-cotizacion' object.pk  %}">Editar cotizacion</a>
+                        {% endif%}
                     </div>
-                    <p>en espera</p>
+                    <p class="p3">
+                        {%if object.status == 0 %}
+                            Su Solicitud esta siendo procesada
+                        {% endif%}
+                        {%if object.status == 1 %}
+                            Su Solicitud fue aceptada en breve le contactaremos
+                        {% endif%}
+                        {%if object.status == 2 %}
+                            Lamentablemente no podemos haceptar su solicitud
+                        {% endif%}
+                    </p>
                 </div>
             </div>
         {% endfor %}
