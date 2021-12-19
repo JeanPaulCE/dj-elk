@@ -2,13 +2,13 @@
 {% load static %}
 
 {% block css %}
-
+<link rel="stylesheet" href="{% static 'css/formulario.css' %}">
 {% endblock %}
 
 {% block content %}
 <section class="form-container">
     <form method="post">
-            {% csrf_token %}
+        {% csrf_token %}
         {% for field in form.visible_fields %}
             <div class="form-grid">
                 <label class="form-label">{{ field.label }}</label>
@@ -16,7 +16,7 @@
                 {{ field.errors }}
             </div>
             {% endfor %}
-        <input type="submit" value="Save">
+        <input class="button" type="submit" value="{{ button }}">
      </form>
 </section>
 {% endblock %}

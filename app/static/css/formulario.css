@@ -30,6 +30,16 @@
     outline: none;
 }
 
+.form-container form div textarea:focus {
+    border: 1px solid var(--title);
+    outline: none;
+}
+
+.form-container form div select:focus {
+    border: 1px solid var(--title);
+    outline: none;
+}
+
 .errorlist {
     color: red;
 }
