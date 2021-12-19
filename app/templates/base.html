@@ -29,25 +29,25 @@
                     <div class="menu-grid">
                         <nav>
                             <ul class="menu-items">
-                                <li><a class="menu-link hvr-underline-from-center" href="{% url 'index' %}">INICIO</a>
+                                <li title="Inicio"><a class="menu-link hvr-underline-from-center" href="{% url 'index' %}">INICIO</a>
                                 </li>
-                                <li><a class="menu-link hvr-underline-from-center" href="{% url 'portafolio' %}">PORTAFOLIO</a>
+                                <li title="Portafolio"><a class="menu-link hvr-underline-from-center" href="{% url 'portafolio' %}">PORTAFOLIO</a>
                                 </li>
-                                <li><a class="menu-link hvr-underline-from-center" href="{% url 'acerca-de' %}">NUESTRA
+                                <li title="Nuestra historia"><a class="menu-link hvr-underline-from-center" href="{% url 'acerca-de' %}">NUESTRA
                                     HISTORIA</a></li>
                                 {% if user.is_authenticated %}
                                 {% if user.is_superuser == 1 %}
-                                <li><a class="menu-link hvr-underline-from-center" href="{% url 'administracion' %}">ADMINISTRACIÓN</a>
+                                <li title="Administrar cotizaciones"><a class="menu-link hvr-underline-from-center" href="{% url 'administracion' %}">ADMINISTRACIÓN</a>
                                 </li>
                                 {% else %}
-                                <li><a class="menu-link hvr-underline-from-center" href="{% url 'usuario' %}">ADMINISTRACIÓN</a>
+                                <li title="Crear cotización"><a class="menu-link hvr-underline-from-center" href="{% url 'usuario' %}">ADMINISTRACIÓN</a>
                                 </li>
                                 {% endif %}
-                                <li><a class="menu-link hvr-underline-from-center" href="{% url 'cerrar-sesion' %}">CERRAR
+                                <li title="Cerrar sesión"><a class="menu-link hvr-underline-from-center" href="{% url 'cerrar-sesion' %}">CERRAR
                                     SESIÓN</a>
                                 </li>
                                 {% else %}
-                                <li><a class="menu-link hvr-underline-from-center" href="{% url 'registro' %}">CONTACTANOS</a>
+                                <li title="Iniciar sesión/Registrarse"><a class="menu-link hvr-underline-from-center" href="{% url 'registro' %}">CONTACTANOS</a>
                                 </li>
                                 {% endif %}
                             </ul>
@@ -58,7 +58,7 @@
         </div>
         {% block extra_title %}
         {% endblock %}
-        <img class="paper-img" src="{% static 'images/paper-menu.png' %}" alt="paper">
+        <img class="paper-img mb-2" src="{% static 'images/paper-menu.png' %}" alt="paper">
     </header>
 
     <main class="content">

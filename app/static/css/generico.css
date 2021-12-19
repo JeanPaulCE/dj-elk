@@ -18,6 +18,10 @@
     margin-top: 1.5vh;
 }
 
+.mb-2 {
+    margin-bottom: 2em;
+}
+
 html {
     font-size: 100%;
     background-color: var(--background);
@@ -255,7 +259,7 @@ ul{
         display: flex;
         position: absolute;
         width: 100%;
-        top: -42em;
+        top: -32em;
         z-index: -1;
     }
 /* Mascota */
@@ -274,4 +278,11 @@ ul{
     margin-top: 1em;
     padding: .6em 4em;
     cursor: pointer;
+}
+
+.button a {
+    color: var(--white);
+    font-family: "Open Sans";
+    font-weight: 700;
+    font-size: 1em;
 }

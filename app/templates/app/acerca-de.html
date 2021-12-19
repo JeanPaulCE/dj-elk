@@ -6,18 +6,16 @@
 <link rel="stylesheet" href="{% static 'css/acerca_de.css' %}">
 {% endblock %}
 
-{% block content%}
-<div class="bg-w">
-    <h1 class="title">Conocé Nuestra Historia</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex aperiam distinctio nisi ab deleniti repudiandae ad
-        sequi nemo beatae dolores officia, ut consequuntur? Perferendis hic assumenda aliquam doloremque natus
-        explicabo.</p>
+{% block extra_title %}
+<div class="container-title">
+    <h1 class="title">CONOCÉ NUESTRAS<br>ESPECIALIDADES </h1>
+    <p class="title-description">¿Listos para unirse al grupo de caza? Nos encanta crear<br>proyectos que vuelen la cabeza, y vos, sos nuestro<br>compañero ideal </p>
 </div>
+{% endblock %}
 
-<img class="paper-img" src="{% static 'images/paper-bottom.png' %}" alt="paper">
-<h2 class="title w100">Personal</h2>
+{% block content %}
+<h2 class="title w100">PERSONAL</h2>
 <div class="grid-c2">
-
     <div class="card">
         <img class="card-img" src="{% static 'images/modelo.jpg' %}" alt="modelo">
         <h3 class="card-title">Jean Paul</h3>
