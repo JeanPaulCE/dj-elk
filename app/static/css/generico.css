@@ -22,6 +22,12 @@
     margin-bottom: 2em;
 }
 
+.relative { position: relative; }
+
+.absolute { position: absolute; }
+
+.display-block { display: block; }
+
 html {
     font-size: 100%;
     background-color: var(--background);

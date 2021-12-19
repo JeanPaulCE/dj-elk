@@ -38,7 +38,7 @@ class EditarCotizacion(UserPassesTestMixin,UpdateView):
 class AceptarCotizacion(UserPassesTestMixin,UpdateView):
     model = Cotizaciones
     fields = []
-    template_name = "app/Aceptar_cotizaciones.html"
+    template_name = "app/aceptar-cotizaciones.html"
     success_url = reverse_lazy('administracion')
     def form_valid(self, form):
         form.instance.status = '1'
@@ -49,7 +49,7 @@ class AceptarCotizacion(UserPassesTestMixin,UpdateView):
 class RechazarCotizacion(UserPassesTestMixin,UpdateView):
     model = Cotizaciones
     fields = []
-    template_name = "app/rechazar_cotizaciones.html"
+    template_name = "app/rechazar-cotizaciones.html"
     success_url = reverse_lazy('administracion')
     def form_valid(self, form):
         form.instance.status = '2'

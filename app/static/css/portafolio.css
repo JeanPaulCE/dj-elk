@@ -1,5 +1,15 @@
+/*
 html{
     background-color: var(--white);
+}*/
+
+.title-left {
+    margin-top: 1em!important;
+    font-family: "Open Sans";
+    font-weight: 800;
+    font-size: 2em;
+    color: var(--title);
+    margin: 0;
 }
 
 .p-img{
@@ -7,6 +17,7 @@ html{
     margin: auto;
     align-content: center;
 }
+
 .bk{
     background: #0f0f0f;
 }
@@ -19,22 +30,28 @@ html{
 }
 .p-p{
     padding-top: 1em;
-    padding-left: 12em;
+    padding-left: 4em;
     padding-bottom: 6em;
 }
+
 .paper-end{
-    position: relative;
-    top: -4em;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
 }
+
 .bg{
     background: var(--background);
 }
 .content{
-    margin: 0 0 40em 0;
+    margin: 0 0 40em;
 }
+
 .space{
     margin-top: 2em;
 }
+
 .b{
     color: var(--white);
 }
