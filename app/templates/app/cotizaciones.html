@@ -5,6 +5,12 @@
 <link rel="stylesheet" href="{% static 'css/formulario.css' %}">
 {% endblock %}
 
+{% block extra_title %}
+<div class="container-title">
+    <h1 class="title uppercase">{{ action }} cotización</h1>
+</div>
+{% endblock %}
+
 {% block content %}
 <section class="form-container">
     <form method="post">
@@ -16,7 +22,7 @@
                 {{ field.errors }}
             </div>
             {% endfor %}
-        <input class="button" type="submit" value="{{ button }}">
+        <input class="button" type="submit" value="{{ action }}">
      </form>
 </section>
 {% endblock %}

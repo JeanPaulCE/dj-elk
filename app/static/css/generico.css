@@ -196,6 +196,7 @@ ul{
         color: var(--title);
         margin: 0;
         text-align: center;
+        text-transform: uppercase
     }
 
     h6{

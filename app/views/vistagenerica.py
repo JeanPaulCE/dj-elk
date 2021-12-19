@@ -29,7 +29,7 @@ class RegistroCotizacion(CreateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['button'] = "Crear"
+        context['action'] = "Crear"
         return context
 
 
@@ -45,7 +45,7 @@ class EditarCotizacion(UserPassesTestMixin, UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['button'] = "Actualizar"
+        context['action'] = "Actualizar"
         return context
 
 
