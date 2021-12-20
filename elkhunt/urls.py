@@ -17,7 +17,6 @@ from django.contrib import admin
 from django.urls import path
 from app.urls import urlpatterns as appurl
 
-urlpatterns = appurl
-[
+urlpatterns = [
     path('admin/', admin.site.urls),
 ] + appurl
