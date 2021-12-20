@@ -2,15 +2,25 @@
 {% load static %}
 
 {% block css %}
+<link rel="stylesheet" href="{% static 'css/formulario.css' %}">
+<link rel="stylesheet" href="{% static 'css/administracion.css' %}">
+{% endblock %}
 
+{% block extra_title %}
+<div class="container-title">
+    <br>
+    <h1 class="title">RECHAZAR COTIZACIÓN</h1>
+</div>
 {% endblock %}
 
 {% block content %}
 <section class="form-container">
-    <form method="post">{% csrf_token %}
-        <h1 class="titulo-b">{{object.titulo}}</h1>
-        <p class="title-description">{{object.descripcion}}</p>
-        <input type="submit" value="Rechazar">
+    <form method="post">
+        {% csrf_token %}
+        <p class="c-red">¿Estas seguro de rechazar esta cotización?</p>
+        <p class="data-action c-black">Título: <span>{{ object.titulo }}</span></p>
+        <p class="data-action c-black">Descripción: <span>{{ object.descripcion }}</span></p>
+        <input class="button" type="submit" value="Confirmar">
      </form>
 </section>
 {% endblock %}

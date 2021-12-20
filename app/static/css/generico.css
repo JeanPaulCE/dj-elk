@@ -32,6 +32,10 @@
 
 .bg-red { background-color: var(--red); }
 .bg-green { background-color: var(--green); }
+.bg-orange { background-color: var(--title); }
+.c-red { color: var(--red) !important; }
+.c-green { color: var(--green) !important; }
+.c-gray { color: var(--nav-text) !important; }
 
 html {
     font-size: 100%;

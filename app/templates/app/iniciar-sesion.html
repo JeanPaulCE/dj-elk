@@ -13,17 +13,13 @@
 
 {% block content %}
 
-{% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
-{% endif %}
-
 {% if next %}
-    {% if user.is_authenticated %}
-    <p>Your account doesn't have access to this page. To proceed,
+{% if user.is_authenticated %}
+<p>Your account doesn't have access to this page. To proceed,
     please login with an account that has access.</p>
-    {% else %}
-    <p>Please login to see this page.</p>
-    {% endif %}
+{% else %}
+<p>Please login to see this page.</p>
+{% endif %}
 {% endif %}
 
 <section class="form-container">
@@ -34,9 +30,14 @@
         <div class="form-grid">
             <label class="form-label">{{ field.label }}</label>
             {{ field }}
-            {{ field.errors }}
         </div>
         {% endfor %}
+        {% if form.errors %}
+        <ul class="errorlist">
+            <li>Por favor, introduzca un nombre de usuario y clave correctos. Observe que ambos campos pueden ser
+                sensibles a mayúsculas.</li>
+        </ul>
+        {% endif %}
         <input class="button" type="submit" value="Acceder">
     </form>
 </section>

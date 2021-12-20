@@ -3,7 +3,7 @@
 
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'css/usuario.css' %}">
+<link rel="stylesheet" href="{% static 'css/administracion.css' %}">
 {% endblock %}
 
 {% block extra_title %}
@@ -13,6 +13,56 @@
 {% endblock %}
 
 {% block content%}
+<section>
+    <div class="grid-r">
+        <img class="img-b" src="{% static 'images/business-people-having-meeting.jpg' %}" alt="empresa">
+        <div class="container-data">
+            <h2 class="titulo-b">{{ usuario }}</h2>
+            <div class="grid-c">
+                <p class="data">Nombre completo: <span>{{ fullname }}</span></p>
+                <p class="data">Email: <span>{{ email }}</span></p>
+                <p class="data">Empresa: <span>{{ perfil.empresa }}</span></p>
+                <p class="data">Ubicación: <span>{{ perfil.ubicacion }}</span></p>
+                <p class="data">Teléfono: <span>{{ perfil.telefono }}</span></p>
+            </div>
+            <div class="container-btn">
+                <a class="btn bg-orange" href="{% url 'nueva-cotizacion' %}">Crear cotización</a>
+                <a class="btn bg-orange" href="#">Editar perfil</a>
+            </div>
+        </div>
+    </div>
+
+    {% if cotizaciones %}
+    {% for object in cotizaciones %}
+    <div class="grid-r">
+        <img class="w100 img-b" src="{% static 'images/cotizacion.jpg' %}" alt="">
+        <div class="container-data">
+            <h2 class="titulo-b">{{ object.titulo }}</h2>
+            <div class="grid-c">
+                <p class="data">Descripción: <span>{{ object.descripcion }}</span></p>
+                <p class="data">Servicio: <span>{{ object.servicio }}</span></p>
+                {% if object.status == 0 %}
+                    <p class="data c-gray">Su solicitud está siendo procesada.</p>
+                {% endif %}
+                {% if object.status == 1 %}
+                    <p class="data c-green">Solicitud aceptada, en breve le contactaremos.</p>
+                {% endif %}
+                {% if object.status == 2 %}
+                    <p class="data c-red">Solicitud rechazado, lo sentimos.</p>
+                {% endif %}
+            </div>
+            <div class="container-btn">
+                {% if object.status == 0 %}
+                <a class="btn bg-orange" href="{% url 'editar-cotizacion' object.pk %}">Editar cotización</a>
+                {% endif%}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% endif%}
+</section>
+
+<!--
 <section class="grid-r">
     <div class="block">
         <img class="w100 img-b" src="{% static 'images/business-people-having-meeting.jpg' %}" alt="empresa">
@@ -37,7 +87,7 @@
     </div>
     
     {% if cotizaciones %}
-        {%for object in cotizaciones%}
+        {% for object in cotizaciones %}
             <div class="block">
                 <img class="w100 img-b" src="{% static 'images/cotizacion.jpg' %}" alt="">
                 <div class="end4">
@@ -69,8 +119,9 @@
 
 
 </section>
-    
-    <!-- <p> {{cotizaciones}}</p> -->
+-->
+
+<!-- <p> {{cotizaciones}}</p> -->
 {% endblock %}
 
 

@@ -15,6 +15,7 @@ def acerca_de(request):
 def portafolio(request):
     return render(request, 'app/portafolio.html')
 
+
 def usuario(request):
 
     auth_user = User.objects.get(username=request.user.username)
@@ -24,19 +25,21 @@ def usuario(request):
     except:
         perfil = None
     try:
-        cotizaciones = list(Cotizaciones.objects.filter(solicitante_id=auth_user.id))
+        cotizaciones = list(Cotizaciones.objects.filter(
+            solicitante_id=auth_user.id))
     except:
         cotizaciones = None
 
-    context= {
-        'perfil':perfil,
-        'usuario':request.user.username,
-        'fullname':fullname,
-        'email':auth_user.email,
+    context = {
+        'perfil': perfil,
+        'usuario': request.user.username,
+        'fullname': fullname,
+        'email': auth_user.email,
         'inicio': auth_user.last_login,
-        'cotizaciones':cotizaciones
+        'cotizaciones': cotizaciones
     }
     return render(request, 'app/administración-usuario.html', context=context)
+
 
 @user_passes_test(lambda x: x.has_perm('administracion'))
 def administracion(request):
@@ -53,13 +56,60 @@ def administracion(request):
     except:
         cotizaciones = None
 
-    context= {
-        'perfil':perfil,
-        'usuario':request.user.username,
-        'fullname':fullname,
-        'email':auth_user.email,
+    context = {
+        'perfil': perfil,
+        'usuario': request.user.username,
+        'fullname': fullname,
+        'email': auth_user.email,
         'inicio': auth_user.last_login,
-        "cotizaciones":cotizaciones
+        "cotizaciones": cotizaciones
     }
     return render(request, 'app/administracion-admin.html', context=context)
 
+def administracion_rechazada(request):
+
+    auth_user = User.objects.get(username=request.user.username)
+    fullname = auth_user.first_name + " " + auth_user.last_name
+    try:
+        perfil = Perfil.objects.get(usuario_id=request.user.id)
+    except:
+        perfil = None
+
+    try:
+        cotizaciones = list(Cotizaciones.objects.all().exclude(status=2))
+    except:
+        cotizaciones = None
+
+    context = {
+        'perfil': perfil,
+        'usuario': request.user.username,
+        'fullname': fullname,
+        'email': auth_user.email,
+        'inicio': auth_user.last_login,
+        "cotizaciones": cotizaciones
+    }
+    return render(request, 'app/administracion-rechazada.html', context=context)
+
+def administracion_aceptada(request):
+
+    auth_user = User.objects.get(username=request.user.username)
+    fullname = auth_user.first_name + " " + auth_user.last_name
+    try:
+        perfil = Perfil.objects.get(usuario_id=request.user.id)
+    except:
+        perfil = None
+
+    try:
+        cotizaciones = list(Cotizaciones.objects.all().exclude(status=2))
+    except:
+        cotizaciones = None
+
+    context = {
+        'perfil': perfil,
+        'usuario': request.user.username,
+        'fullname': fullname,
+        'email': auth_user.email,
+        'inicio': auth_user.last_login,
+        "cotizaciones": cotizaciones
+    }
+    return render(request, 'app/administracion-aceptada.html', context=context)

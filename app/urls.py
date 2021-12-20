@@ -14,6 +14,8 @@ urlpatterns = [
     path('accounts/login/', LoginView.as_view(template_name='app/iniciar-sesion.html'), name='iniciar-sesion'),
     path('cerrar-sesion/', LogoutView.as_view(template_name='app/cerrar-sesion.html'), name='cerrar-sesion'),
     path('administracion/', administracion, name='administracion'),
+    path('administracion/rechazada', administracion_rechazada, name='administracion-rechazada'),
+    path('administracion/aceptada', administracion_aceptada, name='administracion-aceptada'),
     path('cotizacion/nueva/',RegistroCotizacion.as_view(), name='nueva-cotizacion'),
     path('cotizacion/editar/<int:pk>',login_required(EditarCotizacion.as_view()), name='editar-cotizacion'),
     path('cotizacion/aceptar/<int:pk>',AceptarCotizacion.as_view(), name='aceptar-cotizacion'),
