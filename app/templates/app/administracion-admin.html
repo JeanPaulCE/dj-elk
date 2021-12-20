@@ -14,55 +14,42 @@
 {% endblock %}
 
 {% block content%}
-<section class="grid-r">
-    <div class="block">
-        <img class="w100 img-b" src="{% static 'images/business-people-having-meeting.jpg' %}" alt="empresa">
-        <div>
-            <h1 class="titulo-b">{{usuario}}</h1><br>
-            <p class="b">Nombre completo: {{fullname}}</p><br>
-            <p class="b">Email: {{email}}</p>      <br>
-            <p class="b">Ultimo inico: {{inicio}}</p><br>
+<section>
+    <div class="grid-r">
+        <img class="img-b" src="{% static 'images/business-people-having-meeting.jpg' %}" alt="empresa">
+        <div class="container-data">
+            <h2 class="titulo-b">{{ usuario }}</h2>
+            <div class="grid-c">
+                <p class="data">Nombre completo: {{ fullname }}</p>
+                <p class="data">Email: {{ email }}</p>
+                <p class="data">Último inico: {{ inicio }}</p>
+                <p class="data">Empresa: {{ perfil.empresa }}</p>
+                <p class="data">Ubicación: {{ perfil.ubicacion }}</p>
+                <p class="data">Mercado: {{ perfil.mercado }}</p>
+                <p class="data">Teléfono: {{ perfil.telefono }}</p>
+            </div>
         </div>
-        <div>
-            <p class="bb sp">Empresa:   {{perfil.empresa}}</p><br>
-            <p class="bb">Ubicacion: {{perfil.ubicacion}}</p>      <br>
-            <p class="bb">Mercado:   {{perfil.mercado}}</p><br>
-            <p class="bb">Telefono:  {{perfil.telefono}}</p><br>
-        </div>
-
-
     </div>
 
     {% if cotizaciones %}
-        {%for object in cotizaciones%}
-            <div class="block">
-                <img class="w100 img-b" src="{% static 'images/cotizacion.jpg' %}" alt="">
-                <div>
-                    <h1 class="titulo-b">{{object.titulo}}</h1><br>
-                    <p class="b">Servicio:{{object.servicio}}</p><br>
-                </div>
-                <div>
-                    <p class="bb sp">Descripcion:   {{object.descripcion}}</p>
-                </div>
-                <div class="grid-r-3">
-                    <div class="r2">
-                        {%if object.status == 0 %}
-                             <a class="btn" href="{% url 'aceptar-cotizacion' object.pk  %}">Aceptar</a>
-                            <a class="btn" href="{% url 'rechazar-cotizacion' object.pk  %}">rechazar</a>
-                        {% endif%}
-                    </div>
-                </div>
+    {% for object in cotizaciones %}
+    <div class="grid-r">
+        <img class="w100 img-b" src="{% static 'images/cotizacion.jpg' %}" alt="">
+        <div class="container-data">
+            <h2 class="titulo-b">{{ object.titulo }}</h2>
+            <div class="grid-c">
+                <p class="data">Servicio: {{ object.servicio }}</p>
+                <p class="data">Descripción: {{ object.descripcion }}</p>
             </div>
-        {% endfor %}
+            <div class="container-btn">
+                {% if object.status == 0 %}
+                <a class="btn bg-green" href="{% url 'aceptar-cotizacion' object.pk  %}">Aceptar</a>
+                <a class="btn bg-red" href="{% url 'rechazar-cotizacion' object.pk  %}">Rechazar</a>
+                {% endif%}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
     {% endif%}
-
-
 </section>
-
-    <!-- <p> {{cotizaciones}}</p> -->
-{% endblock %}
-
-
-{% block js %}
-
 {% endblock %}
